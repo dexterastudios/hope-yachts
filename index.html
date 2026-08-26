@@ -808,7 +808,80 @@
             </div>
 
             <div class="fleet-grid">
-                <!-- 400.jpeg -->
+                <style>
+/* CSS Image Slider Styles */
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Adjust height to match your card layout */
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.slider-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Keyframes based on image count per card */
+.count-2 { width: 200%; animation-name: slide2; }
+.count-3 { width: 300%; animation-name: slide3; }
+.count-4 { width: 400%; animation-name: slide4; }
+.count-5 { width: 500%; animation-name: slide5; }
+.count-6 { width: 600%; animation-name: slide6; }
+
+@keyframes slide2 {
+    0%, 45% { transform: translateX(0); }
+    50%, 95% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slide3 {
+    0%, 28% { transform: translateX(0); }
+    33%, 61% { transform: translateX(-33.33%); }
+    66%, 95% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slide4 {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-25%); }
+    50%, 70% { transform: translateX(-50%); }
+    75%, 95% { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slide5 {
+    0%, 15% { transform: translateX(0); }
+    20%, 35% { transform: translateX(-20%); }
+    40%, 55% { transform: translateX(-40%); }
+    60%, 75% { transform: translateX(-60%); }
+    80%, 95% { transform: translateX(-80%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slide6 {
+    0%, 12% { transform: translateX(0); }
+    16%, 28% { transform: translateX(-16.66%); }
+    33%, 45% { transform: translateX(-33.33%); }
+    50%, 62% { transform: translateX(-50%); }
+    66%, 78% { transform: translateX(-66.66%); }
+    83%, 95% { transform: translateX(-83.33%); }
+    100% { transform: translateX(0); }
+}
+</style>
+
+<!-- 400.jpeg -->
 <div class="yacht-card">
     <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/400.jpeg" alt="Yacht 400" class="yacht-img">
     <div class="yacht-details">
@@ -856,9 +929,16 @@
     </div>
 </div>
 
-<!-- 599.jpeg -->
+<!-- 599.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/599.jpeg" alt="Yacht 599" class="yacht-img">
+    <div class="image-slider">
+        <div class="slider-track count-4">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/599.jpeg" alt="Yacht 599">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/599-2.jpeg" alt="Yacht 599-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/599-3.jpeg" alt="Yacht 599-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/599-4.jpeg" alt="Yacht 599-4">
+        </div>
+    </div>
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -872,57 +952,16 @@
     </div>
 </div>
 
-<!-- 599-2.jpeg -->
+<!-- 689.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/599-2.jpeg" alt="Yacht 599-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">599 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
+    <div class="image-slider">
+        <div class="slider-track count-4">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/689.jpeg" alt="Yacht 689">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/689-2.jpeg" alt="Yacht 689-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/689-3.jpeg" alt="Yacht 689-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/689-4.jpeg" alt="Yacht 689-4">
         </div>
     </div>
-</div>
-
-<!-- 599-3.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/599-3.jpeg" alt="Yacht 599-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">599 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 599-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/599-4.jpeg" alt="Yacht 599-4" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">599 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 689.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/689.jpeg" alt="Yacht 689" class="yacht-img">
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -936,57 +975,17 @@
     </div>
 </div>
 
-<!-- 689-2.jpeg -->
+<!-- 699.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/689-2.jpeg" alt="Yacht 689-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">689 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
+    <div class="image-slider">
+        <div class="slider-track count-5">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699.jpeg" alt="Yacht 699">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699-2.jpeg" alt="Yacht 699-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699-3.jpeg" alt="Yacht 699-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699-4.jpeg" alt="Yacht 699-4">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699-5.jpeg" alt="Yacht 699-5">
         </div>
     </div>
-</div>
-
-<!-- 689-3.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/689-3.jpeg" alt="Yacht 689-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">689 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 689-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/689-4.jpeg" alt="Yacht 689-4" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">689 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 699.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699.jpeg" alt="Yacht 699" class="yacht-img">
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -1000,89 +999,14 @@
     </div>
 </div>
 
-<!-- 699-2.jpeg -->
+<!-- 700.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699-2.jpeg" alt="Yacht 699-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">699 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
+    <div class="image-slider">
+        <div class="slider-track count-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/700.jpeg" alt="Yacht 700">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/700-2.jpeg" alt="Yacht 700-2">
         </div>
     </div>
-</div>
-
-<!-- 699-3.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699-3.jpeg" alt="Yacht 699-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">699 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 699-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699-4.jpeg" alt="Yacht 699-4" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">699 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 699-5.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/699-5.jpeg" alt="Yacht 699-5" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">699 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 700.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/700.jpeg" alt="Yacht 700" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">700 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 700-2.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/700-2.jpeg" alt="Yacht 700-2" class="yacht-img">
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -1112,9 +1036,14 @@
     </div>
 </div>
 
-<!-- 799.jpeg -->
+<!-- 799.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/799.jpeg" alt="Yacht 799" class="yacht-img">
+    <div class="image-slider">
+        <div class="slider-track count-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/799.jpeg" alt="Yacht 799">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/799-2.jpeg" alt="Yacht 799-2">
+        </div>
+    </div>
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -1128,41 +1057,18 @@
     </div>
 </div>
 
-<!-- 799-2.jpeg -->
+<!-- 800.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/799-2.jpeg" alt="Yacht 799-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">799 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
+    <div class="image-slider">
+        <div class="slider-track count-6">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800.jpeg" alt="Yacht 800">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-2.jpeg" alt="Yacht 800-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-3.jpeg" alt="Yacht 800-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-4.jpeg" alt="Yacht 800-4">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-5.jpeg" alt="Yacht 800-5">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-6.jpeg" alt="Yacht 800-6">
         </div>
     </div>
-</div>
-
-<!-- 800.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800.jpeg" alt="Yacht 800" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">800 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 800-2.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-2.jpeg" alt="Yacht 800-2" class="yacht-img">
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -1176,73 +1082,16 @@
     </div>
 </div>
 
-<!-- 800-3.jpeg -->
+<!-- 849.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-3.jpeg" alt="Yacht 800-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">800 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
+    <div class="image-slider">
+        <div class="slider-track count-4">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/849.jpeg" alt="Yacht 849">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/849-2.jpeg" alt="Yacht 849-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/849-3.jpeg" alt="Yacht 849-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/849-4.jpeg" alt="Yacht 849-4">
         </div>
     </div>
-</div>
-
-<!-- 800-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-4.jpeg" alt="Yacht 800-4" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">800 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 800-5.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-5.jpeg" alt="Yacht 800-5" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">800 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 800-6.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/800-6.jpeg" alt="Yacht 800-6" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">800 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 849.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/849.jpeg" alt="Yacht 849" class="yacht-img">
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -1256,57 +1105,18 @@
     </div>
 </div>
 
-<!-- 849-2.jpeg -->
+<!-- 850.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/849-2.jpeg" alt="Yacht 849-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">849 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
+    <div class="image-slider">
+        <div class="slider-track count-6">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850.jpeg" alt="Yacht 850">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-2.jpeg" alt="Yacht 850-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-3.jpeg" alt="Yacht 850-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-4.jpeg" alt="Yacht 850-4">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-5.jpeg" alt="Yacht 850-5">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-6.jpeg" alt="Yacht 850-6">
         </div>
     </div>
-</div>
-
-<!-- 849-3.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/849-3.jpeg" alt="Yacht 849-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">849 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 849-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/849-4.jpeg" alt="Yacht 849-4" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">849 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 850.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850.jpeg" alt="Yacht 850" class="yacht-img">
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -1320,121 +1130,15 @@
     </div>
 </div>
 
-<!-- 850-2.jpeg -->
+<!-- 899.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-2.jpeg" alt="Yacht 850-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">850 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
+    <div class="image-slider">
+        <div class="slider-track count-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/899-2.jpeg" alt="Yacht 899-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/899-3.jpeg" alt="Yacht 899-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/899-4.jpeg" alt="Yacht 899-4">
         </div>
     </div>
-</div>
-
-<!-- 850-3.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-3.jpeg" alt="Yacht 850-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">850 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 850-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-4.jpeg" alt="Yacht 850-4" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">850 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 850-5.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-5.jpeg" alt="Yacht 850-5" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">850 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 850-6.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/850-6.jpeg" alt="Yacht 850-6" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">850 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 899-2.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/899-2.jpeg" alt="Yacht 899-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">899 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 899-3.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/899-3.jpeg" alt="Yacht 899-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">899 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 899-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/899-4.jpeg" alt="Yacht 899-4" class="yacht-img">
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -1464,9 +1168,17 @@
     </div>
 </div>
 
-<!-- 999.jpeg -->
+<!-- 999.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999.jpeg" alt="Yacht 999" class="yacht-img">
+    <div class="image-slider">
+        <div class="slider-track count-5">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999.jpeg" alt="Yacht 999">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999-2.jpeg" alt="Yacht 999-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999-3.jpeg" alt="Yacht 999-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999-4.jpeg" alt="Yacht 999-4">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999-5.jpeg" alt="Yacht 999-5">
+        </div>
+    </div>
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
@@ -1480,121 +1192,16 @@
     </div>
 </div>
 
-<!-- 999-2.jpeg -->
+<!-- 1100.jpeg Group -->
 <div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999-2.jpeg" alt="Yacht 999-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">999 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
+    <div class="image-slider">
+        <div class="slider-track count-4">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/1100.jpeg" alt="Yacht 1100">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/1100-2.jpeg" alt="Yacht 1100-2">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/1100-3.jpeg" alt="Yacht 1100-3">
+            <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/1100-4.jpeg" alt="Yacht 1100-4">
         </div>
     </div>
-</div>
-
-<!-- 999-3.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999-3.jpeg" alt="Yacht 999-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">999 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 999-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999-4.jpeg" alt="Yacht 999-4" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">999 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 999-5.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/999-5.jpeg" alt="Yacht 999-5" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">999 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 1100.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/1100.jpeg" alt="Yacht 1100" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">1100 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 1100-2.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/1100-2.jpeg" alt="Yacht 1100-2" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">1100 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 1100-3.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/1100-3.jpeg" alt="Yacht 1100-3" class="yacht-img">
-    <div class="yacht-details">
-        <p style="color: var(--text-muted); font-size: 13px;"></p>
-        <div class="yacht-specs">
-            <span><i class="fa-solid fa-users"></i> -- Guests</span>
-            <span><i class="fa-solid fa-bed"></i> 1 Hour</span>
-        </div>
-        <div class="yacht-footer">
-            <div class="price">1100 AED <small>/ hour</small></div>
-            <a href="https://wa.me/message/EINYE73XI4VCN1" target="_blank" class="cta-btn" style="padding: 6px 14px; font-size: 13px;">Inquire</a>
-        </div>
-    </div>
-</div>
-
-<!-- 1100-4.jpeg -->
-<div class="yacht-card">
-    <img src="https://0xe2553.neocities.org/webpageclients/Client-hope/assets/1100-4.jpeg" alt="Yacht 1100-4" class="yacht-img">
     <div class="yacht-details">
         <p style="color: var(--text-muted); font-size: 13px;"></p>
         <div class="yacht-specs">
