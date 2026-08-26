@@ -809,51 +809,51 @@
 
             <div class="fleet-grid">
                 <style>
-/* Maintain card container shape */
+/* Yacht Card Container */
 .yacht-card {
     overflow: hidden;
 }
 
-/* Single Yacht Image styling */
+/* Single Yacht Image */
 .yacht-img {
     width: 100%;
-    height: 220px; /* Adjust card image area height as desired */
+    height: 220px;
     object-fit: contain;
-    background-color: #000; /* Optional: adds dark fill behind wide/tall images */
+    background-color: #000;
 }
 
-/* CSS Image Slider */
+/* Slider Outer Frame */
 .image-slider {
     position: relative;
     width: 100%;
-    height: 220px; /* Must match .yacht-img height */
+    height: 220px;
     overflow: hidden;
     background-color: #000;
 }
 
 .slider-track {
     display: flex;
-    width: 100%;
     height: 100%;
     animation-duration: 12s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
 
-.slider-track img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Prevents cropping by fitting full image inside box */
-    flex-shrink: 0;
-}
+/* Force each image to take EXACTLY 100% of the visible card width */
+.count-2 img { width: 50%; height: 100%; object-fit: contain; flex-shrink: 0; }
+.count-3 img { width: 33.333%; height: 100%; object-fit: contain; flex-shrink: 0; }
+.count-4 img { width: 25%; height: 100%; object-fit: contain; flex-shrink: 0; }
+.count-5 img { width: 20%; height: 100%; object-fit: contain; flex-shrink: 0; }
+.count-6 img { width: 16.666%; height: 100%; object-fit: contain; flex-shrink: 0; }
 
-/* Keyframes based on image count per card */
+/* Track Total Widths */
 .count-2 { width: 200%; animation-name: slide2; }
 .count-3 { width: 300%; animation-name: slide3; }
 .count-4 { width: 400%; animation-name: slide4; }
 .count-5 { width: 500%; animation-name: slide5; }
 .count-6 { width: 600%; animation-name: slide6; }
 
+/* Keyframe Animations (Full Frame Shifts) */
 @keyframes slide2 {
     0%, 45% { transform: translateX(0); }
     50%, 95% { transform: translateX(-50%); }
@@ -862,8 +862,8 @@
 
 @keyframes slide3 {
     0%, 28% { transform: translateX(0); }
-    33%, 61% { transform: translateX(-33.33%); }
-    66%, 95% { transform: translateX(-66.66%); }
+    33%, 61% { transform: translateX(-33.333%); }
+    66%, 95% { transform: translateX(-66.666%); }
     100% { transform: translateX(0); }
 }
 
@@ -886,11 +886,11 @@
 
 @keyframes slide6 {
     0%, 12% { transform: translateX(0); }
-    16%, 28% { transform: translateX(-16.66%); }
-    33%, 45% { transform: translateX(-33.33%); }
+    16%, 28% { transform: translateX(-16.666%); }
+    33%, 45% { transform: translateX(-33.333%); }
     50%, 62% { transform: translateX(-50%); }
-    66%, 78% { transform: translateX(-66.66%); }
-    83%, 95% { transform: translateX(-83.33%); }
+    66%, 78% { transform: translateX(-66.666%); }
+    83%, 95% { transform: translateX(-83.333%); }
     100% { transform: translateX(0); }
 }
 </style>
