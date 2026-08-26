@@ -809,12 +809,26 @@
 
             <div class="fleet-grid">
                 <style>
-/* CSS Image Slider Styles */
+/* Maintain card container shape */
+.yacht-card {
+    overflow: hidden;
+}
+
+/* Single Yacht Image styling */
+.yacht-img {
+    width: 100%;
+    height: 220px; /* Adjust card image area height as desired */
+    object-fit: contain;
+    background-color: #000; /* Optional: adds dark fill behind wide/tall images */
+}
+
+/* CSS Image Slider */
 .image-slider {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 220px; /* Must match .yacht-img height */
     overflow: hidden;
+    background-color: #000;
 }
 
 .slider-track {
@@ -829,7 +843,7 @@
 .slider-track img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Prevents cropping by fitting full image inside box */
     flex-shrink: 0;
 }
 
