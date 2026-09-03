@@ -8,7 +8,8 @@
     :root {
       --bg-color: #f4efe6;
       --card-bg: #fffdf9;
-      --accent: #e05a47;
+      --accent: #2c5d3f; /* Warm chalkboard green tint */
+      --gold: #d4af37;
       --text: #2b2b2b;
       --shadow: rgba(0, 0, 0, 0.08);
     }
@@ -27,48 +28,46 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: 20px 0;
     }
 
-    /* Container setup */
     .stage {
       position: relative;
       width: 100%;
-      max-width: 420px;
+      max-width: 480px;
       padding: 20px;
       text-align: center;
     }
 
-    /* Initial Button Styling */
+    /* Trigger Button Styling */
     .trigger-btn {
       background: var(--accent);
       color: #fff;
       border: none;
-      padding: 16px 32px;
-      font-size: 1.1rem;
+      padding: 18px 36px;
+      font-size: 1.15rem;
       font-weight: 600;
       border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(224, 90, 71, 0.3);
+      box-shadow: 0 10px 25px rgba(44, 93, 63, 0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.4s ease;
     }
 
     .trigger-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(224, 90, 71, 0.4);
+      box-shadow: 0 14px 30px rgba(44, 93, 63, 0.4);
     }
 
     .trigger-btn:active {
       transform: translateY(1px);
     }
 
-    /* Card Box (Initially Hidden) */
-    .card {
-      background: var(--card-bg);
-      border: 2px solid #eae5d9;
-      border-radius: 16px;
-      padding: 40px 30px;
-      box-shadow: 0 20px 40px var(--shadow);
+    /* Container for revealed contents */
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
       opacity: 0;
       transform: scale(0.8) translateY(20px);
       pointer-events: none;
@@ -76,26 +75,34 @@
                   transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    /* Active Revealed State */
+    /* Active State */
     .stage.open .trigger-btn {
       opacity: 0;
       pointer-events: none;
       position: absolute;
     }
 
-    .stage.open .card {
+    .stage.open .content-wrapper {
       opacity: 1;
       transform: scale(1) translateY(0);
       pointer-events: auto;
     }
 
-    /* Card Content */
+    /* Personal Card */
+    .card {
+      background: var(--card-bg);
+      border: 2px solid #eae5d9;
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-shadow: 0 15px 35px var(--shadow);
+    }
+
     .badge {
       display: inline-block;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      color: #888;
+      color: #777;
       margin-bottom: 12px;
     }
 
@@ -107,7 +114,7 @@
     }
 
     p {
-      font-size: 1rem;
+      font-size: 0.98rem;
       line-height: 1.6;
       color: #555;
       margin-bottom: 24px;
@@ -118,7 +125,52 @@
       color: var(--text);
     }
 
-    /* Canvas overlay for particle burst */
+    /* Certificate Layout */
+    .certificate {
+      background: #ffffff;
+      border: 8px solid var(--accent);
+      outline: 2px dashed var(--gold);
+      outline-offset: -5px;
+      border-radius: 8px;
+      padding: 32px 20px;
+      box-shadow: 0 15px 35px var(--shadow);
+      position: relative;
+    }
+
+    .cert-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #777;
+      margin-bottom: 16px;
+    }
+
+    .cert-award {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .cert-recipient {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      border-bottom: 2px solid #ddd;
+      display: inline-block;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .cert-class {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #666;
+    }
+
+    /* Canvas overlay */
     #canvas {
       position: fixed;
       top: 0;
@@ -137,11 +189,22 @@
   <div class="stage" id="stage">
     <button class="trigger-btn" id="openBtn">Press to Open ✉️</button>
 
-    <div class="card">
-      <span class="badge">Special Note</span>
-      <h1>Happy Teachers' Day!</h1>
-      <p>You are genuinely the best teacher ever! Thank you for your patience, endless guidance, and for making learning actually enjoyable. Blah blah blah, you're awesome!</p>
-      <div class="signature">— With appreciation 🎓</div>
+    <div class="content-wrapper">
+      
+      <div class="card">
+        <span class="badge">Special Note</span>
+        <h1>Happy Teachers' Day!</h1>
+        <p>You are genuinely the best math teacher ever! Thank you for making math make sense, for your endless patience, and for keeping our class lighthearted and fun. Blah blah blah, you're absolute magic!</p>
+        <div class="signature">With appreciation, <br><strong>Raazi</strong> 🎓</div>
+      </div>
+
+      <div class="certificate">
+        <div class="cert-title">Official Recognition</div>
+        <div class="cert-award">Best Math Teacher</div>
+        <div class="cert-recipient">Rinsina Ma'am</div>
+        <div class="cert-class">Awarded by Class 8R</div>
+      </div>
+
     </div>
   </div>
 
@@ -165,11 +228,11 @@
         this.x = x;
         this.y = y;
         this.size = Math.random() * 8 + 4;
-        this.speedX = (Math.random() - 0.5) * 12;
-        this.speedY = (Math.random() - 0.7) * 14;
+        this.speedX = (Math.random() - 0.5) * 14;
+        this.speedY = (Math.random() - 0.7) * 16;
         this.gravity = 0.3;
         this.friction = 0.98;
-        this.color = ['#e05a47', '#e9c46a', '#2a9d8f', '#457b9d'][Math.floor(Math.random() * 4)];
+        this.color = ['#2c5d3f', '#d4af37', '#e9c46a', '#2a9d8f'][Math.floor(Math.random() * 4)];
         this.alpha = 1;
         this.decay = Math.random() * 0.015 + 0.005;
       }
@@ -195,7 +258,7 @@
     }
 
     function createBurst(x, y) {
-      for (let i = 0; i < 60; i++) {
+      for (let i = 0; i < 70; i++) {
         particles.push(new Particle(x, y));
       }
     }
@@ -210,7 +273,7 @@
       requestAnimationFrame(animate);
     }
 
-    openBtn.addEventListener('click', (e) => {
+    openBtn.addEventListener('click', () => {
       const rect = openBtn.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
