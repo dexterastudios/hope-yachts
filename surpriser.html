@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Teachers' Day!</title>
+  <style>
+    :root {
+      --bg-color: #f4efe6;
+      --card-bg: #fffdf9;
+      --accent: #e05a47;
+      --text: #2b2b2b;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Container setup */
+    .stage {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Initial Button Styling */
+    .trigger-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(224, 90, 71, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.4s ease;
+    }
+
+    .trigger-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(224, 90, 71, 0.4);
+    }
+
+    .trigger-btn:active {
+      transform: translateY(1px);
+    }
+
+    /* Card Box (Initially Hidden) */
+    .card {
+      background: var(--card-bg);
+      border: 2px solid #eae5d9;
+      border-radius: 16px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 40px var(--shadow);
+      opacity: 0;
+      transform: scale(0.8) translateY(20px);
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                  transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Active Revealed State */
+    .stage.open .trigger-btn {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    .stage.open .card {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Card Content */
+    .badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .signature {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Canvas overlay for particle burst */
+    #canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas"></canvas>
+
+  <div class="stage" id="stage">
+    <button class="trigger-btn" id="openBtn">Press to Open ✉️</button>
+
+    <div class="card">
+      <span class="badge">Special Note</span>
+      <h1>Happy Teachers' Day!</h1>
+      <p>You are genuinely the best teacher ever! Thank you for your patience, endless guidance, and for making learning actually enjoyable. Blah blah blah, you're awesome!</p>
+      <div class="signature">— With appreciation 🎓</div>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('openBtn');
+    const stage = document.getElementById('stage');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 8 + 4;
+        this.speedX = (Math.random() - 0.5) * 12;
+        this.speedY = (Math.random() - 0.7) * 14;
+        this.gravity = 0.3;
+        this.friction = 0.98;
+        this.color = ['#e05a47', '#e9c46a', '#2a9d8f', '#457b9d'][Math.floor(Math.random() * 4)];
+        this.alpha = 1;
+        this.decay = Math.random() * 0.015 + 0.005;
+      }
+
+      update() {
+        this.speedX *= this.friction;
+        this.speedY *= this.friction;
+        this.speedY += this.gravity;
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.alpha -= this.decay;
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = Math.max(this.alpha, 0);
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    function createBurst(x, y) {
+      for (let i = 0; i < 60; i++) {
+        particles.push(new Particle(x, y));
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, index) => {
+        p.update();
+        p.draw();
+        if (p.alpha <= 0) particles.splice(index, 1);
+      });
+      requestAnimationFrame(animate);
+    }
+
+    openBtn.addEventListener('click', (e) => {
+      const rect = openBtn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      stage.classList.add('open');
+      createBurst(centerX, centerY);
+      animate();
+    });
+  </script>
+</body>
+</html>
